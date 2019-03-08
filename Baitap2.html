@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h3></h3>
+<input style="text" id="input">
+<input type="button" id="add" value="Add" onclick="add()">
+<h3></h3>
+<input style="text" id="output"  >
+<input type="button" id="dipslay" value="Display" onclick="display()">
+<body>
+<script>
+    let x = 0;
+    let array = [];
+    let chuoiso;
+ function add() {
+     array[x] = document.getElementById("input").value;
+     x++;
+     chuoiso = array.join("");
+     console.log(chuoiso);
+     document.getElementById("input").value = "";
+     document.getElementById("output").value = array.join("");
+ }
+ function display() {
+     const Chuoiso = chuoiso.toString();
+     const result =[Chuoiso[0]];
+     for (let i = 1; i < Chuoiso.length; i++) {
+         if (Chuoiso[i -1]%2 === 0 && Chuoiso[i]%2 === 0) {
+             result.push('-', Chuoiso[i]);
+         } else {
+             result.push(Chuoiso[i]);
+         }
+         document.write(result.join(''));
+     }
+ }
+</script>
+</body>
+</html>
